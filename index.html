@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title></title>
+    <meta content="">
+    <link rel="stylesheet" href="./style/style.css">
+
+</head>
+
+<body>
+    <!--DIV BACKGROUND VIDEO-->
+    <div class="hide" id="videowrap">
+        <video autoplay id="myVideo">
+            <source src="" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="logo">
+        <img src="logo.png" style="width: 72px" alt="">
+    </div>
+
+    <!--DIV START-->
+    <div class="show" id="start">
+        <p>Takos!</p>
+        <div id="startbtn" onclick="start()">Inizia</div>
+    </div>
+
+    <!--DIV QUESTIONS CONTAINER-->
+    <div class="hide" id="questions-container">
+        <div id="question"></div>
+        <div class="risposte">
+            <div id="option1" onclick="inviaRisposta(1)">option1</div>
+            <div id="option2" onclick="inviaRisposta(2)">option2</div>
+        </div>
+    </div>
+
+    <!--AVANZAMENTO-->
+    <div class="hide" id="avanzamento">
+       <ul class="bullets">
+           <li class="circle inactive" id="bullet0"></li>
+           <li class="circle inactive" id="bullet1"></li>
+           <li class="circle inactive" id="bullet2"></li>
+           <li class="circle inactive" id="bullet3"></li>
+           <li class="circle inactive" id="bullet4"></li>
+           <li class="circle inactive" id="bullet5"></li>
+           <li class="circle inactive" id="bullet6"></li>
+           <li class="circle inactive" id="bullet7"></li>
+       </ul>
+    </div>
+    
+    <!--CONTROLLI-->
+    <div id="controlli" class="hide">
+        <div id="mute-controller">Mute</div>
+        <div id="skip-controller">Skip</div>
+    </div>
+    
+    <script src="./functions/main.js"></script>
+    
+</body>
+</html>
