@@ -1,4 +1,5 @@
 var startWrap = document.getElementById("start");
+var introWrap = document.getElementById("intro");
 var questWrap = document.getElementById("questions-container");
 var videoWrap = document.getElementById("videowrap");
 var avanzamentoWrap = document.getElementById("avanzamento");
@@ -6,16 +7,25 @@ var controlli = document.getElementById("controlli");
 var tastoMuto = document.getElementById("mute-controller");
 var tastoSkip = document.getElementById('skip-controller');
 
-var domande = ["Scegli il posto in macchina...", "La sveglia sta suonando!", "Pesca una carta:", "Domanda 4?", "Domanda 5?", "Domanda 6?", "Domanda 7?", "Domanda 8?"];
-var risp1 = ["Guidatore", "Interrompi", "Probabilit\xE0", "a", "a", "a", "a", "a"];
-var risp2 = ["Passeggero", "Ritarda", "Imprevisti", "c", "c", "c", "c", "c"];
+var domande = ["La sveglia sta suonando!", "Durante un viaggio, preferisci essere:", "Pesca una carta:", "Domanda 4?", "Domanda 5?", "Domanda 6?", "Domanda 7?", "Domanda 8?"];
+var risp1 = [ "Interrompi", "Guidatore", "Probabilit\xE0", "a", "a", "a", "a", "a"];
+var risp2 = [ "Ritarda", "Passeggero", "Imprevisti", "c", "c", "c", "c", "c"];
 
 var counter = 0;
 
 var primeCinque = 0;
 var ultimeTre = 0;
 
+document.body.style.backgroundColor = "#000";
+
 //mostra e nascondi
+function backgroundColor() {
+    if (counter === 0 || counter === 4) {document.body.style.backgroundColor = "#D95A41";}
+    else if (counter === 1 || counter === 5) {document.body.style.backgroundColor = "#2EA9A7";}
+    else if (counter === 2 || counter === 6) {document.body.style.backgroundColor = "#778FA3";}
+    else if (counter === 3 || counter === 7) {document.body.style.backgroundColor = "#D79351";}
+}
+
 function nascondi(el1) {
     el1.classList.remove("show");
     el1.classList.add("hide");
@@ -41,9 +51,11 @@ tastoMuto.addEventListener('click', muto);
 tastoSkip.addEventListener('click', getDomanda);
 
 function start() {
+    nascondi(introWrap);
     nascondi(startWrap);
     mostra(avanzamentoWrap);
     getDomanda();
+    backgroundColor();
 }
 
 function getDomanda() {
@@ -58,6 +70,7 @@ function getDomanda() {
         document.getElementById("bullet" + [counter]).classList.remove('inactive');
         document.getElementById("bullet" + [counter]).classList.add('active');
     }
+   
 }
 
 function inviaRisposta(risposta) {
@@ -86,11 +99,12 @@ function inviaRisposta(risposta) {
     mostra(videoWrap);
     console.log(primeCinque, ultimeTre, 'domanda ' + counter);
 
-    if (counter < 8) {
+    if (counter <= 7) {
         document.getElementById('myVideo').addEventListener('ended', getDomanda, false);
     } else {
-        document.getElementById('myVideo').addEventListener('ended', getResults);
+        document.getElementById('myVideo').addEventListener('ended', getResults, false);
     }
+    window.setTimeout(backgroundColor,500);    
 }
 
 function getResults() {
