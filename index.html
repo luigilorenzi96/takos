@@ -2,7 +2,7 @@
 <html lang="it">
 
 <head>
-   <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> What's my Layer? - DxTa Online Test</title>
     <meta content="Discover your layers">
@@ -13,7 +13,7 @@
 
 <body>
     <!--DIV BACKGROUND VIDEO-->
-    <div class="hide" id="videowrap">
+    <div class="hide" id="videowrap" style="z-index: 1;">
         <video autoplay id="myVideo">
             <source src="" type="video/mp4">
         </video>
@@ -26,21 +26,21 @@
 
     <!--DIV START-->
     <div class="container p-5 show" id="intro">
-     <div class="row align-items-center">
-         <div class="col text-center">
-             <img src="" style="width: 250px" alt="">
-         </div>
-     </div>
-      
-       <div class="row align-items-center" style="height: 300px">
-           <div class="col text-center">
-               <div class="titolo">What's your layer?</div>
-               <div class="descrizione-intro">Oggi più che mai le aziende cercano candidati che abbiano non solo competenze tecniche, ma anche capacità più trasversali di relazione. What’s your layer </div>
-           </div>
-       </div>
-       <div class="show" id="start">
-        <div id="startbtn" onclick="start()">Inizia</div>
-    </div></div>
+        <div class="row">
+
+            <div class="col-12">
+                <img class="gif-animata img-fluid" src="scritta-intro2.gif" alt="">
+            </div>
+
+            <div class="col-lg-6 offset-lg-3  descrizione-intro text-center">
+                Scopri quali soft skill ti caratterizzano e trova il tuo oggetto guida nella trasformazione digitale.
+            </div>
+
+            <div class="col-12 show" id="start">
+                <div id="startbtn" onclick="start()">Inizia</div>
+            </div>
+        </div>
+    </div>
 
     <!--DIV QUESTIONS CONTAINER-->
     <div class="container p-5 hide" id="questions-container">

@@ -7,9 +7,9 @@ var controlli = document.getElementById("controlli");
 var tastoMuto = document.getElementById("mute-controller");
 var tastoSkip = document.getElementById('skip-controller');
 
-var domande = ["La sveglia sta suonando!", "Durante un viaggio, preferisci essere:", "Pesca una carta:", "Domanda 4?", "Domanda 5?", "Domanda 6?", "Domanda 7?", "Domanda 8?"];
-var risp1 = [ "Interrompi", "Guidatore", "Probabilit\xE0", "a", "a", "a", "a", "a"];
-var risp2 = [ "Ritarda", "Passeggero", "Imprevisti", "c", "c", "c", "c", "c"];
+var domande = ["La sveglia sta suonando!", "Durante un viaggio, preferisci essere:", "Pesca una carta:", "La tua testa si trova...", "Finalmente un giorno libero!", "A bordo vasca:", "Prendi il sentiero per...", "Ti influenzano maggiormente:"];
+var risp1 = [ "Interrompi", "Guidatore", "Probabilit\xE0", "Sulle spalle", "Passeggiata", "Ti tuffi", "Arrivare in vetta", "I tuoi obiettivi"];
+var risp2 = [ "Ritarda", "Passeggero", "Imprevisti", "Tra le nuvole", "Divano", "Usi la scaletta", "Goderti il paesaggio", "Le tue emozioni"];
 
 var counter = 0;
 
@@ -104,21 +104,21 @@ function inviaRisposta(risposta) {
     } else {
         document.getElementById('myVideo').addEventListener('ended', getResults, false);
     }
-    window.setTimeout(backgroundColor,500);    
+    window.setTimeout(backgroundColor,1000);    
 }
 
 function getResults() {
     if (primeCinque >= 3 && ultimeTre >= 2) {
-        location.href = "https:\\google.com";
+        location.href = "./bussola.html";
         console.log('primo personaggio')
     } else if (primeCinque >= 3 && ultimeTre < 2) {
-        //location.href = "https";
+        location.href = "./bilancia.html";
         console.log('secondo personaggio')
     } else if (primeCinque < 3 && ultimeTre >= 2) {
-        //location.href = "https";
+        location.href = "./pennello.html";
         console.log('terzo personaggio')
     } else {
-        //location.href = "https";
+        location.href = "./salvagente.html";
         console.log('quarto personaggio')
     }
 }
